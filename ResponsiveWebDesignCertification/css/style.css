@@ -1,0 +1,13 @@
+.inline-block-element {
+  width: 150px;
+  height: 100px;
+  display: inline-block;
+}
+
+.element1 {
+  background-color: lightblue;
+}
+
+.element2 {
+  background-color: lightgreen;
+}
