@@ -1,0 +1,214 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: whitesmoke;
+	padding: 40px;
+	/* outline: solid blue; */
+	width: fit-content;
+	height: fit-content;
+	margin: 50px auto;
+}
+
+/* ============================
+   1. NAVIGATION — :link / :visited / :hover
+   ============================ */
+.main-nav {
+	margin-bottom: 30px;
+}
+
+.main-nav a {
+	/* À faire :
+	   - :link      → couleur bleue, souligné
+	   - :visited   → couleur violette
+	   - :hover     → couleur orange + souligné
+	*/
+	margin-right: 15px;
+}
+
+.main-nav a:link {
+	color: blue;
+	text-decoration-line: underline;
+}
+
+.main-nav a:visited {
+	color: purple;
+	text-decoration: none;
+}
+
+.main-nav a:hover {
+	color: orange;
+	text-decoration-line: underline;
+}
+
+/* ============================
+   2. FAQ — :target
+   ============================ */
+.faq-item {
+	/* À faire :
+	   - display: none par défaut
+	   - background clair, padding, border-radius
+	*/
+	display: none;
+	background-color: rgb(37, 62, 39);
+	padding: 20px;
+	border-radius: 15px;
+	color: white;
+	max-width: 400px;
+	
+}
+
+.faq-item:target {
+	/* À faire :
+	   - display: block
+	   - bordure gauche colorée (ex: 4px solid orange)
+	*/
+	display: block;
+	border-left: rgb(7, 245, 7) 5px solid;
+	margin: 20px 0;
+}
+
+
+/* ============================
+   3. FORM CARD — :focus-within
+   ============================ */
+.form-card {
+	background: white;
+	max-width: 400px;
+	padding: 30px;
+	border-radius: 10px;
+	border: 2px solid transparent;
+	transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-card:focus-within {
+	/* À faire :
+	   - bordure colorée
+	   - box-shadow légère
+	*/
+	border-color: rgb(1, 137, 47);
+	box-shadow: 2px 2px 10px rgba(1, 137, 46, 0.296);
+	transform: scale(1.05);
+	transition: transform 1.3s ease;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+.form-group label {
+	display: block;
+	margin-bottom: 5px;
+	font-size: 0.9rem;
+}
+
+.form-group input {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+/* :focus sur les inputs texte */
+.form-group input:focus {
+	/* À faire : bordure + outline visible */
+	border: solid 1px green;
+	outline: green;
+}
+
+/* :enabled / :disabled */
+.form-group input:enabled {
+	/* À faire : fond blanc, curseur normal */
+	background-color: white;
+	cursor: auto;
+}
+
+.form-group input:disabled {
+	/* À faire : fond gris clair, texte grisé, cursor: not-allowed */
+	background-color: whitesmoke;
+	color: grey;
+	cursor: not-allowed;
+}
+
+
+/* ============================
+   4. CHECKBOX — :checked
+   ============================ */
+.checkbox-label {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 20px;
+	font-size: 0.9rem;
+	cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+	appearance: none;
+	width: 1.2rem;
+	height: 1.2rem;
+	border: 2px solid #82f00d;
+	border-radius: 4px;
+	position: relative;
+	cursor: pointer;
+	flex-shrink: 0;
+}
+
+.checkbox-label input[type="checkbox"]:checked {
+	/* À faire : background vert */
+	background-color: green;
+}
+
+.checkbox-label input[type="checkbox"]:checked::after {
+	/* À faire : dessiner la coche (content, position, border-width, rotate) */
+	content: "";
+	position:absolute;
+	width: 4px;
+	height: 8px;
+	left: 5px;
+	top: 1px;
+	border-right: solid white 2px;
+	border-bottom: solid white 2px;
+	transform: rotate(45deg);
+
+}
+
+.checkbox-label input[type="checkbox"]:focus-visible {
+	/* À faire : outline visible pour l'accessibilité clavier */
+	outline: red solid;
+}
+
+
+/* ============================
+   5. BOUTON — :hover / :active / :focus-visible
+   ============================ */
+.btn-submit {
+	width: 100%;
+	padding: 12px;
+	background-color: #333;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 1rem;
+	cursor: pointer;
+	transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-submit:hover {
+	/* À faire : fond plus clair */
+	background-color: rgb(7, 60, 8)
+}
+
+.btn-submit:active {
+	/* À faire : transform: scale(0.97) ou translateY */
+	background-color: rgb(5, 133, 7);
+	transform: translateY(-2px)
+}
+
+.btn-submit:focus-visible {
+	/* À faire : outline visible (navigation clavier) */
+}
