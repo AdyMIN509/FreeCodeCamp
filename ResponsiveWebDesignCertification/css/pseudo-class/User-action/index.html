@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>Espace Membre</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+	<!-- 1. NAVIGATION -->
+	<nav class="main-nav">
+		<a href="https://example.com" target="_blank">Aide externe</a>
+		<a href="#faq1">FAQ : Livraison</a>
+		<a href="#faq2">FAQ : Paiement</a>
+	</nav>
+
+	<!-- 2. FAQ EN CSS PUR (:target) -->
+	<section class="faq">
+		<div id="faq1" class="faq-item">
+			<h3>Quels sont les délais de livraison ?</h3>
+			<p>Livraison sous 3 à 5 jours ouvrés.</p>
+		</div>
+		<div id="faq2" class="faq-item">
+			<h3>Quels moyens de paiement acceptez-vous ?</h3>
+			<p>Carte bancaire, PayPal et virement.</p>
+		</div>
+	</section>
+
+	<!-- 3. FORMULAIRE D'INSCRIPTION -->
+	<div class="form-card">
+		<h2>Inscription</h2>
+
+		<div class="form-group">
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email" placeholder="vous@exemple.com">
+		</div>
+
+		<div class="form-group">
+			<label for="promo">Code promo (bientôt disponible)</label>
+			<input type="text" id="promo" name="promo" disabled placeholder="Indisponible">
+		</div>
+
+		<label class="checkbox-label">
+			<input type="checkbox" id="acceptation" name="acceptation">
+			J'ai lu et j'accepte la <a href="#" target="_blank" rel="noopener">politique de confidentialité</a>
+		</label>
+
+		<!-- 4. BOUTON -->
+		<button type="submit" class="btn-submit">S'inscrire</button>
+	</div>
+
+</body>
+</html>
