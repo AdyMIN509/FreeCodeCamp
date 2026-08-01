@@ -1,0 +1,56 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: linear-gradient(to right, rgb(90, 161, 179), rgb(177, 232, 246));
+}
+
+.form-container {
+	font-family: arial;
+	text-align: center;
+	background-color: white;
+	max-width: 300px;
+	border-radius: 10px;
+	padding: 20px;
+	width: 250px;
+	margin:100px auto;
+	color: rgb(57, 57, 57)
+}
+
+label {
+	margin: 1em auto;
+	color: rgb(57, 57, 57)
+}
+
+input, textarea {
+	width: 89%;
+	padding: 0.5em;
+	margin-bottom: 1em;
+	border-radius: 5px;
+	border: unset;
+	border: 1px solid lightgray
+}
+
+h2 {
+	margin: 0.77em auto;
+}
+
+button {
+	background-color: hsl(120, 59%, 46%);
+	font-size: 1em;
+	border: none;
+	padding: 0.5em;
+	border-radius: 5px;
+	color: white;
+}
+
+button:is(:hover, :focus){
+	background-color: hsl(120, 79%, 21%);
+	transform: translateY(-2px);
+}
+
+button:active{
+	background-color: hsl(120, 95%, 7%);
+}
