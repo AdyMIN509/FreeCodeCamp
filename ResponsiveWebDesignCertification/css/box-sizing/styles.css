@@ -1,0 +1,31 @@
+* {
+	padding: 0;
+	margin: 0;
+	font-family: poppins;
+}
+
+.container {
+	background: lightgrey;
+	width: 50%;
+	margin: 10px auto;
+	padding: 30px
+}
+
+.content-box, .border-box{
+	background-color: red;
+	width: 20%;
+	height: 30px;
+	text-align: center;
+	color: white;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 10px auto;
+}
+
+.content-box {
+	box-sizing: content-box;
+}
+
+.border-box{
+	box-sizing: border-box;
+}
