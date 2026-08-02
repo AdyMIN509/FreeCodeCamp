@@ -1,0 +1,131 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family: poppins;
+	box-sizing: border-box;
+}
+
+.pricing-container {
+	display: flex;
+	flex-wrap: wrap;
+	flex: 0 1 600px;
+	justify-content: center;
+	gap: 50px
+}
+
+.pricing-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex: 0 0 200px;
+	border: 2px solid black;
+	border-radius: 10px;
+	padding: 30px;
+	background: white;
+}
+
+h1, h2, p {
+	text-align: center
+}
+
+h1 {
+	margin: 1.5rem;
+	color: rgba(255, 217, 0, 0.834);
+	font-size: 2rem
+}
+
+body {
+	background: whitesmoke
+}
+
+hr {
+	margin-bottom: 20px;
+	height: 2px;
+}
+
+.basic-plan hr {
+	border: 1px solid green;
+	background: green
+}
+
+.pro-plan hr {
+	border: 1px solid red;
+	background: red
+}
+
+.premium-plan hr {
+	border: 1px solid gold;
+	background: gold
+}
+li {
+	font-size: 0.78rem;
+	list-style-position: inside;
+	list-style: none;
+	line-height: 1.8rem;
+	position: relative;
+	padding-left: 5px
+}
+
+.included::before {
+	content: "✓";
+	position: absolute;
+	color: rgb(42, 166, 42);
+	font-weight: bold;
+	left: -10px
+}
+
+
+.not-included::before {
+	content: "✗";
+	position: absolute;
+	color: rgb(193, 6, 6);
+	font-weight: bold;
+	left: -10px
+}
+
+button {
+	margin: 20px 0 0;
+	font-size: 0.7rem;
+	padding: 0.5em;
+	color: white;
+	border: none;
+	border-radius: 5px;
+}
+
+.basic-plan button {
+	background-color: green
+}
+
+.basic-plan button:hover {
+	transform: translateY(-2px);
+	background-color: rgb(1, 157, 1)
+}
+
+.pro-plan button {
+	background-color: red
+}
+
+.pro-plan button:hover {
+	transform: translateY(-2px);
+	background-color: rgb(170, 3, 3)
+}
+
+.premium-plan button {
+	background-color: rgb(255, 217, 4);
+	color: whitesmoke
+}
+
+.premium-plan button:hover {
+	transform: translateY(-2px);
+	background-color: rgb(211, 180, 1);
+}
+
+.basic-plan {
+	order: 1;
+}
+.pro-plan {
+	order: 2;
+}
+.premium-plan {
+	order: 3;
+}
