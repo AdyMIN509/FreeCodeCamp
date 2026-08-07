@@ -1,0 +1,70 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+tr[class="read"] {
+	background-image: linear-gradient(hsl(120, 100%, 90%), hsl(120, 100%, 60%));
+}
+tr[class="to-read"] {
+	background-image: linear-gradient(hsl(120, 100%, 100%), hsl(0, 6%, 79%));
+}
+tr[class="in-progress"] {
+	background-image: linear-gradient(0deg, hsl(42, 95%, 53%), hsl(43, 32%, 89%));
+}
+
+span {
+	display: inline-block;
+}
+
+tr[class="read"] span[class="status"] {
+	border: 1px solid green;
+	background-image: linear-gradient(to bottom, hsl(120, 100%, 85%) 0% 3%, hsl(120, 100%, 40%));
+	width: 95%;
+	height: 95%;
+	border-radius: 10px;
+	text-align: center;
+}
+tr[class="to-read"] span[class="status"] {
+	border: 1px solid red;
+	background-image: linear-gradient(to bottom, hsl(0, 100%, 85%) 0% 3%, hsl(0, 100%, 40%));
+	width: 95%;
+	height: 95%;
+	border-radius: 10px;
+	text-align: center;
+}
+tr[class="in-progress"] span[class="status"] {
+	border: 1px solid orange;
+	background-image: linear-gradient(to bottom, hsl(42, 100%, 85%) 0% 3%, hsl(42, 100%, 40%));
+	border-radius: 10px;
+	text-align: center;
+}
+
+span[class="status"], span[class^="rate"] {
+	height: 50px;
+	width: 150px;
+	padding: 0.2em;
+}
+
+span[class^="rate"] > span {
+	border: rgb(77, 76, 76) solid 1px;
+	border-radius: 50%;
+	margin: auto;
+	width: 40px;
+	height: 40px;
+	background-color: whitesmoke;
+}
+
+span[class~="one"] span:first-child {
+	background-image: linear-gradient(90deg, gold, orange);
+}
+
+span[class~="two"] span:nth-child(-n + 2) {
+	background-image: linear-gradient(90deg, gold, orange);
+}
+
+span[class~="three"] span {
+	background-image: linear-gradient(90deg, gold, orange);
+}
