@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: min(90%, 1000px);
+  margin: 0 auto;
+  background: rgb(246, 246, 246);
+  align-items: center;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  padding: 0.5rem;
+  margin-bottom: 20px;
+  position: sticky;      /* reste collé... */
+  top: 0;                /* ...tout en haut du viewport */
+  background: rgb(246, 246, 246);
+  z-index: 10;           /* passe au-dessus du contenu qui défile */
+}
+
+#header #header-img {
+  width: 30px;
+  height: 30px;
+}
+
+#nav-bar {
+  display: flex;
+  width: min(90%, 400px);
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+#nav-bar a {
+  text-decoration: none;
+  text-align: center;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+}
+
+#nav-bar a:hover {
+  background-color: black;
+  color: white;
+}
+
+#form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#form h1 {
+  font-size: 1.5rem;
+  margin: 3rem 0 1rem;
+  color: orange;
+}
+
+#form input[type="email"] {
+  width: min(90%, 300px);
+  height: 3rem;
+  border: orange solid 2px;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  padding-left: 20px;
+}
+
+#form input[type="email"]:focus-visible {
+  box-shadow: 0 0 2px 2px orange;
+  border: orange 2px solid;
+}
+
+#form input[type="submit"] {
+  width: 150px;
+  height: 3rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border: none;
+  background-color: orange;
+  font-weight: bold;
+  color: white;
+}
+
+#form input[type="submit"]:hover {
+  background-color: rgb(225, 146, 0);
+}
+#form input[type="submit"]:active {
+  background-color: green;
+}
+
+#description {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "icon1 desc1 desc1"
+    "icon2 desc2 desc2"
+    "icon3 desc3 desc3";
+  gap: 1rem;
+  margin: 50px 0;
+}
+
+#description :is(.icon1, .icon2, .icon3) {
+  font-size: 5rem;
+  color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(120, 100%, 70%);
+  border-radius: 20px;
+}
+
+.icon1 { grid-area: icon1; }
+.icon2 { grid-area: icon2; }
+.icon3 { grid-area: icon3; }
+
+.desc1 { grid-area: desc1; }
+.desc2 { grid-area: desc2; }
+.desc3 { grid-area: desc3; }
+
+#video {
+  margin: 10px 0 60px 0;
+  border-radius: 20px;
+  box-shadow: 0 0 20px 2px white;
+  width: min(800px, 95%);
+}
+
+#pricing {
+  display: flex;
+  justify-content: space-between;
+  gap: 4rem;
+  margin-bottom: 40px;
+}
+
+#pricing .price {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding-bottom: 1.5rem;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid black;
+}
+
+#pricing .price .pricing-title {
+  background: green;
+  width: 100%;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+#pricing .price .pricing-price {
+  color: red;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#pricing .price .pricing-desc {
+  width: 99%;
+}
+
+#pricing .price button {
+  width: 60%;
+  height: 2rem;
+  font-size: 1rem;
+  border: none;
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+#pricing .price button:hover {
+  background-color: rgb(219, 143, 1);
+}
+
+#pricing .price button:active {
+  background-color: rgb(168, 110, 2);
+}
+
+@media screen and (max-width: 930px) {
+  #pricing {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-auto-columns: minmax(min-content, 400px);
+  }
+}

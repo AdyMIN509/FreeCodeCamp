@@ -1,0 +1,39 @@
+body {
+	background-color: hsl(227, 100%, 10%);
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.box {
+	width: 50px;
+	height: 50px;
+	border: 5px solid hsl(200, 100%, 50%);
+	background-color: transparent;
+	box-shadow: 0 0 25px 4px hsla(200, 100%, 50%, 0.643);
+	border-radius: 20px;
+	animation: 1.5s animation ease-in infinite paused;
+}
+
+.box:hover {
+	animation-play-state: running;
+}
+
+@keyframes animation {
+	0% {
+		transform: rotateX(0deg) rotateY(0deg) rotatez(0deg)
+	}
+	33% {
+		transform: rotateX(180deg) rotateY(0deg) rotatez(0deg) scale(4);
+		background-color: green;
+	}
+	66% {
+		transform: rotateX(180deg) rotateY(180deg) rotatez(0deg) scale(2);
+		background-color: red;
+	}
+	100% {
+		transform: rotateX(180deg) rotateY(180deg) rotatez(180deg)
+	}
+}
