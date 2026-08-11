@@ -1,0 +1,34 @@
+body {
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	background-color: #000047;
+	color: white;
+	font-weight: bold;
+	font-family: poppins;
+	font-size: 5rem;
+	flex-direction: column;
+}
+span {
+  display: inline-block;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: solid 1px white;
+  text-align: left-;
+}
+
+.animation-typewriting {
+	animation: 1.5s typewriting steps(12) forwards;
+}
+
+@keyframes typewriting {
+	0% {
+		width: 0;
+	}
+	100% {
+		width: 14ch;
+	}
+}
