@@ -1,3 +1,5 @@
-const arr = ["apple", "banana", "cherry", "date"];
-const slicedArr = arr.slice(1, 3);
-console.log(slicedArr);
+const originalArray = [{ id: 1 }, { id: 2 }, { id: 3 }];
+const filteredArray = originalArray.filter(item => item.id > 1);
+filteredArray[0].id = 4;
+
+console.log(originalArray)
