@@ -1,0 +1,130 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: poppins;
+	font-size: 1rem;
+	color: white;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	background-image: url("./assets/img/background.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+svg {
+	position: absolute;
+	width: 15%;
+	top: -3px;
+	left: 10px;
+}
+
+.card {
+	height: calc(50vw * 0.628);
+	width: 50vw;
+	backdrop-filter: blur(20px);
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 20px;
+	border: 1px solid white;   /* reste net */
+	position: relative;
+	overflow: hidden;
+	animation: oscille 10s linear infinite;
+}
+
+@keyframes oscille {
+	0% {
+		transform: translateY(0px) translateX(0px);
+	}
+	25% {
+		transform: translateY(20px) translateX(-20px);
+	}
+	75% {
+		transform: translateY(40px) translateX(0px);
+	}
+	100% {
+		transform: translateY(0px) translateX(0px);
+	}
+}
+
+.visa-logo {
+	position: absolute;
+	width: 80px;
+	height: 50px;
+	top: 15px;
+	right: 15px;
+	display: flex;
+}
+
+.visa-logo :is(.red, .orange) {
+	width: 50px;
+	height: 100%;
+	border-radius: 50%;
+}
+
+.visa-logo .red	{
+	background-color: hsla(0, 100%, 50%, 0.7);
+	margin-right: -20px;
+}
+
+.visa-logo .orange {
+	background-color: rgba(255, 174, 0, 0.76);
+}
+
+.card-number, .card-holding-name, .card-exp-date {
+	position: absolute;
+}
+
+.card-number {
+	left: 20px;
+	bottom: 25%;
+}
+
+h2 {
+	font-size: 0.7rem;
+	font-weight: 600;
+}
+
+p {
+	font-size: 2rem;
+}
+
+
+.card-holding-name {
+	left: 20px;
+	bottom: 5%;
+}
+
+:is(.card-holding-name, .card-exp-date) p {
+	font-size: 1.5rem;
+}
+
+.card-exp-date {
+	right: 20px;
+	bottom: 5%;
+}
+
+#card-nums {
+	letter-spacing: 10px;
+}
+
+#card-bank-num {
+	background-color: red;
+	width: 500px;
+	height: 50px;
+	background-color: transparent;
+	outline: none;
+	border: 1px solid white;
+	border-radius: 10px;
+	padding-left: 10px;
+	margin-bottom: 30px;
+	color: white;
+	backdrop-filter: blur(20pxpx);
+}
