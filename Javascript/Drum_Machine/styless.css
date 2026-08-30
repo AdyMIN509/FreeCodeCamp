@@ -1,0 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	height: 100svh;
+	background-color: burlywood;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Inter, sans-serif;
+}
+
+.container {
+	background-color: #fff;
+	width: 400px;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+	padding: 24px;
+	border-radius: 16px;
+}
+
+.pad-bank {
+	padding: 12px;
+	background-color: lightgray;
+	border-radius: 8px;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(100px,1fr));
+	grid-template-rows: repeat(3, minmax(100px,1fr));
+	gap: 10px;
+}
+
+.drum-pad {
+	border-radius: 20px;
+	border: none;
+	background-color: #fff;
+	font-size: 1.5rem;
+}
+
+.drum-pad:hover {
+	background-color: rgb(236, 234, 234);
+}
+
+
+.drum-pad:active, .drum-pad-active {
+	background-color: rgb(24, 23, 23);
+	color: white;
+}
+
+.display {
+	background-color: rgb(241, 240, 240);
+	width: 100%;
+	height: 75px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2rem;
+	border-radius: 8px;
+}
