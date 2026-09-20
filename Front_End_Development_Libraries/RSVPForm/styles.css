@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --background: #f3f0e9;
+    --surface: #fffdf8;
+    --surface-alt: #f8f5ee;
+
+    --text: #24231f;
+    --muted: #77736a;
+
+    --accent: #a17a3f;
+    --accent-dark: #795927;
+    --accent-soft: rgba(161, 122, 63, 0.12);
+
+    --border: #ded8cb;
+    --border-focus: #a17a3f;
+
+    --shadow:
+        0 30px 70px rgba(45, 39, 29, 0.12),
+        0 8px 25px rgba(45, 39, 29, 0.06);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+#root {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 20px;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(161, 122, 63, 0.08),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 85%,
+            rgba(161, 122, 63, 0.06),
+            transparent 30%
+        ),
+        var(--background);
+
+    color: var(--text);
+
+    font-family: 'DM Sans', sans-serif;
+}
+
+form {
+    position: relative;
+
+    width: min(100%, 580px);
+
+    padding: 52px;
+
+    background: rgba(255, 253, 248, 0.94);
+
+    border: 1px solid rgba(161, 122, 63, 0.16);
+    border-radius: 4px;
+
+    box-shadow: var(--shadow);
+
+    backdrop-filter: blur(12px);
+}
+
+form::before {
+    content: '';
+
+    position: absolute;
+
+    top: 18px;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+
+    border: 1px solid rgba(161, 122, 63, 0.1);
+
+    pointer-events: none;
+}
+
+#form-title {
+    position: relative;
+
+    margin-bottom: 12px;
+
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 6vw, 48px);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+
+    text-align: center;
+}
+
+#form-title::after {
+    content: '';
+
+    display: block;
+
+    width: 42px;
+    height: 1px;
+
+    margin: 20px auto 36px;
+
+    background: var(--accent);
+}
+
+.section-label {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+
+    margin-bottom: 24px;
+
+    color: var(--text);
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+input:not([type='checkbox']) {
+    width: 100%;
+    height: 52px;
+
+    padding: 0 16px;
+
+    color: var(--text);
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 2px;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+input:not([type='checkbox'])::placeholder {
+    color: #aaa59b;
+}
+
+input:not([type='checkbox']):hover {
+    border-color: #c7bda9;
+}
+
+input:not([type='checkbox']):focus {
+    background: #fffefa;
+
+    border-color: var(--border-focus);
+
+    box-shadow:
+        0 0 0 3px var(--accent-soft);
+}
+
+input[type='number'] {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+    margin: 0;
+    opacity: 0.5;
+}
+
+.section-label:has(input[type='checkbox']) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 17px 18px;
+
+    background: var(--surface-alt);
+
+    border: 1px solid var(--border);
+    border-radius: 2px;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.section-label:has(input[type='checkbox']):hover {
+    background: #f5f1e8;
+    border-color: #c8bda9;
+}
+
+input[type='checkbox'] {
+    width: 19px;
+    height: 19px;
+
+    flex: 0 0 auto;
+
+    appearance: none;
+
+    background: var(--surface);
+
+    border: 1px solid #bdb5a7;
+    border-radius: 2px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input[type='checkbox']:checked {
+    position: relative;
+
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+input[type='checkbox']:checked::after {
+    content: '';
+
+    position: absolute;
+
+    width: 5px;
+    height: 9px;
+
+    top: 2px;
+    left: 6px;
+
+    border: solid white;
+    border-width: 0 1.5px 1.5px 0;
+
+    transform: rotate(45deg);
+}
+
+input[type='checkbox']:focus-visible {
+    box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+button[type='submit'] {
+    width: 100%;
+    height: 54px;
+
+    margin-top: 8px;
+
+    color: #fff;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    background: var(--text);
+
+    border: 1px solid var(--text);
+    border-radius: 2px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.2s ease,
+        box-shadow 0.25s ease;
+}
+
+button[type='submit']:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 8px 20px rgba(121, 89, 39, 0.2);
+}
+
+button[type='submit']:active {
+    transform: translateY(0);
+}
+
+.result-container {
+    position: relative;
+
+    margin-top: 36px;
+    padding: 28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(161, 122, 63, 0.08),
+            rgba(161, 122, 63, 0.02)
+        );
+
+    border: 1px solid rgba(161, 122, 63, 0.25);
+    border-radius: 3px;
+
+    animation: reveal 0.45s ease both;
+}
+
+.result-container::before {
+    content: '';
+
+    position: absolute;
+
+    top: 0;
+    left: 28px;
+
+    width: 45px;
+    height: 2px;
+
+    background: var(--accent);
+}
+
+.result-title {
+    margin-bottom: 22px;
+
+    color: var(--accent-dark);
+
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.result-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+
+    padding: 12px 0;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    border-bottom: 1px solid rgba(161, 122, 63, 0.12);
+}
+
+.result-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.result-section strong {
+    color: var(--text);
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 25px 14px;
+    }
+
+    form {
+        padding: 40px 25px;
+    }
+
+    form::before {
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+    }
+
+    #form-title {
+        font-size: 34px;
+    }
+
+    .result-section {
+        flex-direction: column;
+        gap: 4px;
+    }
+}
+
+@media (max-width: 400px) {
+    form {
+        padding: 34px 20px;
+    }
+
+    #form-title {
+        font-size: 30px;
+    }
+
+    .section-label {
+        margin-bottom: 20px;
+    }
+}
